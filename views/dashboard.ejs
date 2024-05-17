@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/css/DashBoard.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="./Images/Restaurants/download.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .container {
+            margin-top: 85px;
+            margin-bottom: 100px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fa fa-utensils"></i>DELISH.</a>
+        <nav class="navbar">
+            <a class="active" href="./home">Home</a>
+            <a href="./dishes">dishes</a>
+            <a href="#" onclick="openAbout()">about</a>
+            <a href="./contact">Contact us</a>
+            <a href="#">Orders</a>
+        </nav>
+        <div class="InputContainer">
+            <form action="./search-results" method="GET">
+                <input type="text" name="query" class="input" id="input" placeholder="Search">
+                <button type="submit" class="micButton">Search</button>
+            </form>
+        </div>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+            <a href="profile" class="fa fa-user"></a>
+            <i class="fa-solid fa-bell-ring"></i>
+        </div>
+    </header>
+    <p id="search-query-display"></p>
+    <!-- Search Results Container -->
+    <div id="searchResults"></div>
+    <div class="container">
+        <h1 class="heading" style="text-align: center">USER DASHBOARD</h1>
+        <div class="charts-container">
+            <div class="chart">
+                <h2 style="text-align: center">Food Ordering</h2>
+                <canvas id="food-chart" width="200" height="200"></canvas>
+                <p class="chart-description">This chart displays the user's food ordering preferences and timing.</p>
+            </div>
+            <div class="chart">
+                <h2 style="text-align: center">Restaurant Reservations</h2>
+                <canvas id="restaurant-chart" width="200" height="200"></canvas>
+                <p class="chart-description">This chart displays the user's restaurant reservation preferences and timing.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const foodPercentages = <%- JSON.stringify(data.foodPercentages) %>;
+    const restaurantPercentages = <%- JSON.stringify(data.restaurantPercentages) %>;
+    const restaurantPreferences = <%- JSON.stringify(data.restaurantPreferences) %>;
+    const foodPreferences = <%- JSON.stringify(data.foodPreferences) %>;
+
+        var foodData = {
+            labels: foodPreferences,
+            datasets: [{
+                data: foodPercentages,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var foodOptions = {
+            responsive: true
+        };
+
+        var foodCanvas = document.getElementById("food-chart").getContext("2d");
+
+        var foodChart = new Chart(foodCanvas, {
+            type: 'pie',
+            data: foodData,
+            options: foodOptions
+        });
+
+        var restaurantData = {
+            labels: restaurantPreferences,
+            datasets: [{
+                data: restaurantPercentages,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var restaurantOptions = {
+            responsive: true
+        };
+
+        var restaurantCanvas = document.getElementById("restaurant-chart").getContext("2d");
+
+        var restaurantChart = new Chart(restaurantCanvas, {
+            type: 'pie',
+            data: restaurantData,
+            options: restaurantOptions
+        });
+    </script>
+</body>
+</html>

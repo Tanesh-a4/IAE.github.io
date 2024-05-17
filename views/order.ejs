@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="/css/order.css">
+    <style>
+        /* Add styles for the pop-up message */
+        .popup-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f44115;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            animation: pop-up 0.5s ease-out forwards;
+        }
+
+        @keyframes pop-up {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <% include('header', { pageTitle: 'Order Summary', activePage: 'order' }) %>
+
+    <div class="container">
+        <h2>Your Order Summary</h2>
+        <div class="order-details">
+            <h3>Order Details</h3>
+            <ul>
+                <% if (order && order.items) { %>
+                    <% order.items.forEach(item => { %>
+                        <li><%= item.name %> - $<%= item.price.toFixed(2) %></li>
+                    <% }) %>
+                <% } else { %>
+                    <li>No items in order</li>
+                <% } %>
+            </ul>
+        </div>
+        
+        <div class="total-amount">
+            <h3>Total Amount</h3>
+            <p>$<%= order.totalAmount.toFixed(2) %></p>
+        </div>
+        <!-- Payment form action updated -->
+        <form id="payment-form" action="/order" method="post">
+            <input type="submit" value="Pay Now" class="pay-btn">
+        </form>
+    </div>
+
+    <!-- Pop-up message -->
+    <div id="popup-message" class="popup-message">
+        Your order was successful!
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function showPopupMessage() {
+            var popup = document.getElementById("popup-message");
+            popup.style.display = "block";
+            setTimeout(function () {
+                popup.style.display = "none";
+            }, 3000);
+        }
+
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            showPopupMessage();
+        });
+    </script>
+</body>
+
+</html>

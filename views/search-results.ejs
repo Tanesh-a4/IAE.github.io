@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominos | Pizza</title>
+    <link rel="icon" href="./Images/Restaurants/download.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/dominos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        #searchResults {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* Adjust the gap between items as needed */
+            margin-top: 20px;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            /* Add a border to each product item */
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* This helps space out the content evenly */
+            height: 100%;
+            /* Ensure all items take up the same height */
+        }
+
+        .product-image {
+            width: 100%;
+            /* Adjust the width as needed */
+            height: 200px;
+            /* Set a fixed height for the images */
+            object-fit: cover;
+            /* This will ensure the image covers the area without losing its aspect ratio */
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            height: 60px;
+            /* Adjust based on your needs to accommodate the title */
+            overflow: hidden;
+            /* Hide overflow text */
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit text to 2 lines */
+            -webkit-box-orient: vertical;
+        }
+
+        .product-price {
+            margin: 10px 0;
+        }
+
+        .add-to-cart-btn {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            /* Ensure some space above the button */
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: darkgreen;
+        }
+        .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    max-height: 200px; /* Limit the height of images to prevent overflow */
+}
+
+    </style>
+</head>
+
+<body>
+    <%- include('header', { pageTitle: 'Your Page Title Here' , activePage: 'identifierForActivePage' }) %>
+
+
+
+        <!--Header section start-->
+        <%- include('./header', { pageTitle: 'Home' , activePage: 'home' }) %>
+            <!-- Search Query Display -->
+            <p id="search-query-display"></p>
+            <!-- Search Results Container -->
+            <div id="searchResults"></div>
+
+
+            <div id="loading" style="display: none; text-align: center;">
+                <img src="./Images/loader/loader.gif" alt="Loading...">
+            </div>
+
+
+            <!--Footer Section-->
+            <!---------------------------Footer Section ------------------------------>
+            <%- include('footer') %>
+
+
+                <!--Home  ends-->
+
+
+                <!--Java Script-->
+                <script src="search-results.js"></script>
+                <script>
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var urlParams = new URLSearchParams(window.location.search);
+                        var query = urlParams.get('query');
+
+                        // Display the search query
+                        document.getElementById('search-query-display').textContent = "Search results for: " + query;
+
+                        // Assuming 'search-results.js' handles the search functionality and uses the query
+                        // If you're trying to use 'query' within this script, make sure the relevant code is included here
+                    });
+                    let menu = document.querySelector('#menu-bars');
+                    let navbar = document.querySelector('.navbar');
+
+                    menu.onclick = () => {
+                        menu.classList.toggle('fa-times');
+                        navbar.classList.toggle('active');
+                    }
+                    window.onscroll = () => {
+                        menu.classList.remove('fa-times');
+                        navbar.classList.remove('active');
+                    }
+                    // document.querySelector('#search-icon').onclick=() => {
+                    //     document.querySelector('#search-form').classList.toggle('active');
+                    // }
+                    // document.querySelector('#close1').onclick=() => {
+                    //     document.querySelector('#search-form').classList.toggle('active');
+                    // }
+                    document.querySelector("#feedback").onclick = () => {
+                        document.querySelector("#co1").classList.toggle("active");
+                    }
+                    document.querySelector("#close").onclick = () => {
+                        document.querySelector("#co1").classList.toggle("active");
+
+                    }
+                    function myfun() {
+                        document.getElementById("pizza").style.display = "block";
+                    }
+                    function myfunction() {
+                        document.getElementById("nonpizza").style.display = "block";
+                    }
+                    function myroti() {
+                        document.getElementById("mania").style.display = "block";
+                    }
+                    function mycurry() {
+                        document.getElementById("curry").style.display = "block";
+                    }
+                    const btn = document.querySelector("button");
+                    const post = document.querySelector(".post");
+                    const widget = document.querySelector(".star-widget");
+                    const editBtn = document.querySelector(".edit");
+
+                    btn.onclick = () => {
+                        widget.style.display = "none";
+                        post.style.display = "block";
+                        editBtn.onclick = () => {
+                            widget.style.display = "block";
+                            post.style.display = "none";
+                        }
+                        return false;
+                    }
+                    function openAbout() {
+                        document.getElementById("about").style.width = "100%";
+
+                    }
+                    function closeNav() {
+                        document.getElementById("about").style.width = "0%";
+                    }
+
+
+
+
+                </script>
+              
+</body>
+
+</html>

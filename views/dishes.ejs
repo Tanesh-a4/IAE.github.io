@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishes</title>
+    <link rel="icon" href="./Images/Restaurants/download.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body >
+    <%- include('header', { pageTitle: 'Your Page Title Here', activePage: 'identifierForActivePage' }) %>
+
+  
+
+    <!--Header section start-->
+    <%- include('./header', { pageTitle: 'Home', activePage: 'home' }) %>
+   
+    <p id="search-query-display"></p>
+<!-- Search Results Container -->
+ <div id="searchResults"></div>
+
+    <!--Rating Form starts-->
+
+    <!-- <div class="back">
+        <div class="container1" id="co1">
+            <div class="post">
+                <div class="text">Thanks for Rating us!</div>
+                <div class="edit">Edit</div>
+                <i class="fas fa-times" id="close"></i>
+
+            </div>
+            <div class="star-widget">
+                <input type="radio" name="rate" id="rate-5">
+                <label for="rate-5" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-4">
+                <label for="rate-4" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-3">
+                <label for="rate-3" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-2">
+                <label for="rate-2" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-1">
+                <label for="rate-1" class="fas fa-star"></label>
+                <form action="#">
+                    <i class="fas fa-times" id="close"></i>
+                    <h4></h4>
+                    <div class="textarea">
+                        <textarea cols="30" placeholder="Describe your experience"></textarea>
+
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    <!--Rating form ends-->
+    <section>
+        <h3>Dishes</h3>
+    </section>
+    <section class="barb" id="biryani">
+        <h1 class="barbeque">Restaurants</h1>
+        <hr class="line"><br><br><br><br>
+        <div class="box-container">
+            <div class="box">
+                <a href="./barbeque"><img src="./Images/Restaurants/barbeque.jpg"></a>
+                <h3>Barbeque</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Starters,biryani,tandoori</p>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="./dominos"><img src="./Images/Restaurants/dominos.jpg"></a>
+                <h3>Domino's</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Pizza ,Burger, Bread</p>
+
+                </div>
+            </div>
+            <div class="box">
+                <a href="./paradise"><img src="./Images/Restaurants/paradise.jpg"></a>
+                <h3>Paradise</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Starters,biryani,tandoori</p>
+                </div>
+                </div>
+            <div class="box">
+                <a href="./ramkibandi"><img src="./Images/Restaurants/ramkibandi.jpg"></a>
+                <h3>Ram ki Bandi</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Idli, Dosa, Breakfast</p>
+                </div>
+            </div>
+            <div class="box">
+                <a href="./platform65"><img src="./Images/Restaurants/platform65.jpg"></a>
+                <h3>Platform 65</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Starters,biryani,tandoori</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="./hotnspicy"><img src="./Images/Restaurants/hotnspicy.jpg"></a>
+                <h3>Hot N Spicy</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Starters,biryani,tandoori</p>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="./ksbakers"><img src="./Images/Restaurants/ksbakers.png"></a>
+                <h3>KS Bakers</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <br>
+                    <p>Starters,biryani,tandoori</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    
+
+    <!--Home  ends-->
+
+    <%- include('footer') %>
+
+    <!--Java Script-->
+    <script src="./scripts/search-results.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('query');
+    
+    // Display the search query
+    document.getElementById('search-query-display').textContent = "Search results for: " + query;
+    
+    // Assuming 'search-results.js' handles the search functionality and uses the query
+    // If you're trying to use 'query' within this script, make sure the relevant code is included here
+});
+    document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('query');
+    
+    // Display the search query
+    document.getElementById('search-query-display').textContent = "Search results for: " + query;
+    
+    // Assuming 'search-results.js' handles the search functionality and uses the query
+    // If you're trying to use 'query' within this script, make sure the relevant code is included here
+});
+        let menu = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onscroll = () => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        //     document.querySelector('#search-icon').onclick=() => {
+        //         document.querySelector('#search-form').classList.toggle('active');
+        //     }
+        //     document.querySelector('#close1').onclick=() => {
+        //         document.querySelector('#search-form').classList.toggle('active');
+        //     }
+        //     document.querySelector("#feedback").onclick=() =>{
+        //     document.querySelector("#co1").classList.toggle("active");
+        // }
+        //     document.querySelector("#close").onclick=() =>{
+        //     document.querySelector("#co1").classList.toggle("active");
+        // }
+
+        const btn = document.querySelector("button");
+        const post = document.querySelector(".post");
+        const widget = document.querySelector(".star-widget");
+        const editBtn = document.querySelector(".edit");
+
+        btn.onclick = () => {
+            widget.style.display = "none";
+            post.style.display = "block";
+            editBtn.onclick = () => {
+                widget.style.display = "block";
+                post.style.display = "none";
+            }
+            return false;
+        }
+        function openAbout() {
+            document.getElementById("about").style.width = "100%";
+
+        }
+        function closeNav() {
+            document.getElementById("about").style.width = "0%";
+        }
+
+        
+
+    </script>
+    <!--JavaScript ends -->
+
+</body>
+
+</html>

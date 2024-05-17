@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle ? pageTitle : "Default Title" %></title>
+
+
+    <link rel="icon" href="./Images/Restaurants/download.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* Add custom styles for icons */
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons i {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Header section start-->
+    <header>
+        <a href="#" class="logo"><i class="fa fa-utensils"></i>DELISH.</a>
+        <nav class="navbar">
+            <a class="<%= activePage === 'home' ? 'active' : '' %>" href="./home">Home</a>
+            <a class="<%= activePage === 'dishes' ? 'active' : '' %>" href="./dishes">dishes</a>
+            <a href="#" onclick="openAbout()">about</a>
+            <a href="./contact">Contact us</a>
+            <a href="./orders">Orders</a>
+            <!---------will change the functioning of search bar soon !!!!-------->
+        </nav>
+
+        <div class="InputContainer">
+            <form action="./search-results" method="GET">
+                <input type="text" name="query" class="input" id="input" placeholder="Search">
+                <button type="submit" class="micButton">Search</button>
+            </form>
+        </div>
+
+        <div class="icons">
+            <a href="/cart" class="fas fa-shopping-cart"></a>
+            <a href="profile" class="fa fa-user"></a>
+            <a href="dashboard" class="far fa-chart-bar dashboardIcon"></a>
+        </div>
+    </header>
+
+    

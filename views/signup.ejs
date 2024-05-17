@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+      .background-image {
+        background-image: url("https://media.istockphoto.com/id/1293175039/photo/handsome-black-african-american-food-delivery-courier-posing-in-front-of-the-camera-in-a.jpg?s=612x612&w=0&k=20&c=KucST70kZoQAqYcPoRceQM0S5wGYsYaO7-fF72yJe7I=");
+        background-size : cover;
+        height : 100vh;
+      }
+
+      .auth-container {
+        margin-top: 300px;
+        padding: 100px;
+        border-radius: 8px;
+        background-color: white;
+        transition: 1s;
+        color: #0e06fc;
+      }
+
+      .auth-container:hover {
+        box-shadow: 0px 0px 100px 5px red;
+        background-color: black;
+      }
+
+      .one {
+        color: red;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-image">
+      <div class="container">
+        <div class="auth-container">
+          <h1 class="one">Sign Up</h1>
+          <form action="/signup" method="POST">
+            <input type="text" name="username" placeholder="Username" required style="border-radius: 15px;text-align: center;font-weight: bold;height: 25px;font-size: 20px;">
+            <input type="password" name="password" placeholder="Password" required style="border-radius: 15px;text-align: center;font-weight: bold;height: 25px;font-size: 20px;">
+            <button type="submit">Sign Up</button>
+          </form>
+          <a href="/login">Login</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

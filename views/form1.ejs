@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        /* Your CSS styles here */
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #080710;
+        }
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape:first-child {
+            background: linear-gradient(
+                #1845ad,
+                #23a2f6
+            );
+            left: -80px;
+            top: -80px;
+        }
+        .shape:last-child {
+            background: linear-gradient(
+                to right,
+                #ff512f,
+                #f09819
+            );
+            right: -30px;
+            bottom: -80px;
+        }
+        form {
+            height: 520px;
+            width: 400px;
+            /* background-color: rgba(255, 255, 255, 0.13); */
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            /* backdrop-filter: blur(10px); */
+            /* border: 2px solid rgba(255, 255, 255, 0.1); */
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            /* transition: backdrop-filter 0.3s ease; */
+        }
+        /* form:hover {
+            backdrop-filter: blur(15px);
+        } */
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input, select {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        ::placeholder {
+            color: #e5e5e5;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .social {
+            margin-top: 30px;
+            display: flex;
+        }
+        .social div {
+            background: red;
+            width: 150px;
+            border-radius: 3px;
+            padding: 5px 10px 10px 5px;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #eaf0fb;
+            text-align: center;
+        }
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+        .social .fb {
+            margin-left: 25px;
+        }
+        .social i {
+            margin-right: 4px;
+        }
+        .timeSlot
+        {
+            /* color: #f78018; */
+            background-color: #080710;
+            
+        }
+        .timeSlot::after
+        {
+            color: #e5e5e5;
+        }
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #080710;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:
+
+ 100%;
+            z-index: 999;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .navbar a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .icons {
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icons i {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .InputContainer {
+            position: relative;
+            left:-220px
+        }
+
+        .input {
+            width: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .micButton {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Header section start-->
+    <header>
+        <a href="#" class="logo"><i class="fa fa-utensils"></i>DELISH.</a>
+        <nav class="navbar">
+            <a class="active" href="./main">Home</a>
+            <a href="./dishes.html">Dishes</a>
+            <a href="#" onclick="openAbout()">About</a>
+            <a href="./ContactUs">Contact us</a>
+            <a href="./ordersRest">Orders</a>
+        </nav>
+        <div class="InputContainer">
+            <form action="./search-results" method="GET">
+                <input type="text" name="query" class="input" id="input" placeholder="Search">
+                <button type="submit" class="micButton">Search</button>
+            </form>
+        </div>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="profile" class="fa fa-user"></a>
+        </div>
+    </header>
+    <!--Header section end-->
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="/submit-form" method="POST" >
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+    <input type="text" placeholder="Please Enter Your name" id="username"  name="name">
+
+        <!-- Replace password input with time slot select -->
+        <label for="bookingTimeSlot">Select Time Slot</label>
+        <input type="hidden" id="resName" name="resName" value="Dominos">
+        <select id="bookingTimeSlot" name="bookingTimeSlot" >
+            <option class = "timeSlot" value="">-- Select Time Slot --</option>
+            <option class = "timeSlot" value="00:00">00:00</option>
+            <option class = "timeSlot" value="01:00">01:00</option>
+            <option class = "timeSlot" value="02:00">02:00</option>
+            <option class = "timeSlot" value="03:00">03:00</option>
+            <option class = "timeSlot" value="04:00">04:00</option>
+            <option class = "timeSlot" value="05:00">05:00</option>
+            <option class = "timeSlot" value="06:00">06:00</option>
+            <option class = "timeSlot" value="07:00">07:00</option>
+            <option class = "timeSlot" value="08:00">08:00</option>
+            <option class = "timeSlot" value="09:00">09:00</option>
+            <option class = "timeSlot" value="10:00">10:00</option>
+            <option class = "timeSlot" value="11:00">11:00</option>
+            <option class = "timeSlot" value="12:00">12:00</option>
+            <option class = "timeSlot" value="13:00">13:00</option>
+            <option class = "timeSlot" value="14:00">14:00</option>
+            <option class = "timeSlot" value="15:00">15:00</option>
+            <option class = "timeSlot" value="16:00">16:00</option>
+            <option class = "timeSlot" value="17:00">17:00</option>
+            <option class = "timeSlot" value="18:00">18:00</option>
+            <option class = "timeSlot" value="19:00">19:00</option>
+            <option class = "timeSlot" value="20:00">20:00</option>
+            <option class = "timeSlot" value="21:00">21:00</option
+
+>
+            <option class = "timeSlot" value="22:00">22:00</option>
+            <option class = "timeSlot" value="23:00">23:00</option>
+        </select>
+        <!-- !-- Add Number of Tables input --> 
+        <label for="numberOfTables">Number of Tables</label>
+        <input type="number" placeholder="Enter number of tables" id="numTables" name="numTables"  min="1">
+        <button>submit</button>
+        
+    </form>
+    </form>
+</body>
+
+</html>

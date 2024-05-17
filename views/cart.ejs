@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/addtocart.css">
+</head>
+
+<body>
+    <!-- Include header -->
+    <%- include('header', { pageTitle: 'Your Page Title Here', activePage: 'identifierForActivePage' }) %>
+
+  
+
+    <!--Header section start-->
+    <%- include('./header', { pageTitle: 'Home', activePage: 'home' }) %>
+    <!-- Search query display -->
+    <p id="search-query-display"></p>
+
+    <!-- Search Results Container -->
+    <div id="searchResults"></div>
+
+    <!-- Shopping Cart Section -->
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <ul>
+            <% cartItems.forEach(item => { %>
+                <li><%= item.itemName %> - <%= item.price %> - <%= item.quantity %></li>
+            <% }) %>
+        </ul>
+    </div>
+
+   
+
+    <script src="./scripts/search-results.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('query');
+    
+    // Display the search query
+    document.getElementById('search-query-display').textContent = "Search results for: " + query;
+    
+    // Assuming 'search-results.js' handles the search functionality and uses the query
+    // If you're trying to use 'query' within this script, make sure the relevant code is included here
+});
+    document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('query');
+    
+    // Display the search query
+    document.getElementById('search-query-display').textContent = "Search results for: " + query;
+    
+    // Assuming 'search-results.js' handles the search functionality and uses the query
+    // If you're trying to use 'query' within this script, make sure the relevant code is included here
+});
+        let menu = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onscroll = () => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        //     document.querySelector('#search-icon').onclick=() => {
+        //         document.querySelector('#search-form').classList.toggle('active');
+        //     }
+        //     document.querySelector('#close1').onclick=() => {
+        //         document.querySelector('#search-form').classList.toggle('active');
+        //     }
+        //     document.querySelector("#feedback").onclick=() =>{
+        //     document.querySelector("#co1").classList.toggle("active");
+        // }
+        //     document.querySelector("#close").onclick=() =>{
+        //     document.querySelector("#co1").classList.toggle("active");
+        // }
+
+        const btn = document.querySelector("button");
+        const post = document.querySelector(".post");
+        const widget = document.querySelector(".star-widget");
+        const editBtn = document.querySelector(".edit");
+
+        btn.onclick = () => {
+            widget.style.display = "none";
+            post.style.display = "block";
+            editBtn.onclick = () => {
+                widget.style.display = "block";
+                post.style.display = "none";
+            }
+            return false;
+        }
+        function openAbout() {
+            document.getElementById("about").style.width = "100%";
+
+        }
+        function closeNav() {
+            document.getElementById("about").style.width = "0%";
+        }
+
+        
+
+    </script>
+    <!--JavaScript ends -->
+</body>
+</html>

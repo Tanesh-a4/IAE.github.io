@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+    <Style>
+      body {
+        background-image : url("https://media.istockphoto.com/id/1287152859/photo/asian-chinese-delivery-man-with-helmet-press-door-bell-for-grocery-food-delivery.jpg?s=612x612&w=0&k=20&c=MTqRta_fmPo5fXuerkR5AVMXG-ZtgtawuQ-jZhtnLYI=");
+        background-size : cover;
+        height : 100vh;
+        /*width: 100%;
+  height: 100%;*/
+  /* Add your background pattern here */
+  /* background-color: lightblue; */
+  /*background-image: radial-gradient(black 55%, #0000),8/
+    /* radial-gradient(black 55%, #0000), */
+      /*linear-gradient(
+        135deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        indigo,
+        deeppink
+      );
+  background-size: 100% 0.5%, contain;*/
+
+  /* background-blend-mode: hard-light; */
+  /* background-position: 0 0, 1em 1em, 0 0; */
+}
+
+       /* width: 100%;
+        height: 100%;
+        */
+/*
+        --s: 200px; 
+        --c1: #1d1d1d;
+        --c2: #4e4f51;
+        --c3: #3c3c3c;
+        
+
+        background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+        repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+        );
+        background-size: var(--s) calc(var(--s) * 0.577);
+      }*/
+      .auth-container {
+        margin-top : 300px;
+        padding : 100px;
+        border-radius : 8px;
+        background-color : white;
+        transition:1s;
+        color : #0E06FC
+      }
+      .auth-container:hover {
+        box-shadow : 0px 0px 100px 5px orange;
+        background-color : black;
+      }
+      .head1 {
+        color : red;
+        transition : 1s;
+      }
+      .head1:hover {
+        color : yellow;
+        color : 0px 0px 10px yellow;
+      }
+      form {
+        color : #0E06FC;
+      }
+    </Style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="auth-container">
+        <h1 class="head1">Login</h1>
+        <form action="/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required style="background-color : #F594EB;color : rgb(255, 255, 255);border-radius : 15px;text-align : center;font-weight:bold;height : 25px;font-size : 20px;">
+          <input type="password" name="password" placeholder="Password" required style="background-color : #F594EB;color:rgb(255,255,255);border-radius : 15px;text-align:center;font-weight : bold; height : 25px; font-size : 20px;">
+          <button type="submit" style="font-weight : bold;font-size : 25px;">Login</button>
+        </form>
+        <a href="/signup" style="font-weight : bold;">Sign Up</a>
+      </div>
+    </div>
+  </body>
+</html>

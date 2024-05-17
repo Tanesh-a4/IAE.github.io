@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner Food Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Partner Food Dashboard</h1>
+    <div class="container">
+        <h2>Orders</h2>
+        <ul>
+            <% partnerFood.orders.forEach(order => { %>
+                <li>
+                    <strong>User ID:</strong> <%= order.userId %><br>
+                    <strong>Food:</strong> <%= order.food %><br>
+                    <strong>Status:</strong> <%= order.status %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>

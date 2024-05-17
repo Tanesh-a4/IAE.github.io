@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>MAIN PAGE</title>
+</head>
+<body>
+  
+  <!--Header section start-->
+  <header>
+    <a href="#" class="logo"><i class="fa fa-utensils"></i>DELISH.</a>
+    <nav class="navbar">
+        <a class="active" href="./home">Home</a>
+        <a href="#" onclick="openAbout()">about</a>
+        <a href="./contact">Contact us</a>
+        <!---------will change the functioning of search bar soon !!!!-------->
+
+        
+        
+    </nav>
+
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+        <a href="./login" class="fa fa-user"></a>
+
+
+    </div>
+
+</header>
+
+
+
+
+   
+    <div class="box">
+      <div class="delivery">
+        <div class="circle1" onclick="redirectToLink('home')"></div>
+      </div>
+      <div class="prebook">
+        <div class="circle2" onclick="redirectToLink('main')"></div>
+      </div>
+    </div>
+     
+    <div id="about" class="about">
+      <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="about-overlay">
+          <h1>About us</h1>
+          <p>Launched in 2024, Our technology platform connects customers,<br>
+              restaurant partners and delivery partners, serving their multiple needs. <br>
+              Customers use our platform to search and discover restaurants, read and write customer
+              generated reviews and view and upload photos,<br> order food delivery, book a table and make
+              payments while dining-out at restaurants. On the other hand,<br> we provide restaurant partners
+              with industry-specific marketing tools which enable them to engage and acquire customers<br> to
+              grow their business while also providing a reliable <br>and efficient last mile delivery service.
+              We also operate a one-stop procurement solution, <br>Hyperpure, which supplies high quality ingredients
+              and kitchen products to restaurant partners.<br> We also provide our delivery partners with transparent
+              and flexible earning opportunities. </p>
+      </div>
+  </div>
+  
+    <!--Footer Section-->
+<%- include('footer') %>
+    <script>
+      function redirectToLink(route) {
+        window.location.href = '/' + route;
+      }
+    </script>
+  </div>
+</body>
+</html>
